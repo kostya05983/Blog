@@ -1,5 +1,6 @@
-package sample
+package ru.jetspirit
 
+import react.dom.render
 import kotlin.browser.*
 
 actual class Sample {
@@ -19,7 +20,10 @@ fun helloWorld(salutation: String) {
 }
 
 fun main() {
-    document.addEventListener("DOMContentLoaded", {
-        helloWorld("Hi!")
-    })
+    window.onload = {
+        val root = document.getElementById("root") ?: throw IllegalStateException()
+        render(root) {
+            game()
+        }
+    }
 }                

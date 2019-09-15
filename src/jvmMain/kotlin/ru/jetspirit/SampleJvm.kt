@@ -1,4 +1,4 @@
-package sample
+package ru.jetspirit
 
 import io.ktor.application.*
 import io.ktor.html.*
@@ -31,7 +31,9 @@ fun main() {
                             id = "js-response"
                             +"Loading..."
                         }
-                        script(src = "/static/Blog.js") {}
+                        script(src = "/static/Blog.js") {
+
+                        }
                     }
                 }
             }

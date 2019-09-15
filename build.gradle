@@ -1,16 +1,25 @@
 buildscript {
     repositories {
         jcenter()
+        mavenCentral()
+        maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-frontend-plugin:0.0.45"
     }
 }
 
 plugins {
     id 'org.jetbrains.kotlin.multiplatform' version '1.3.50'
 }
+
+apply plugin: 'org.jetbrains.kotlin.frontend'
+
 repositories {
     jcenter()
     maven { url "https://dl.bintray.com/kotlin/ktor" }
     mavenCentral()
+    maven { url 'https://kotlin.bintray.com/kotlin-js-wrappers' }
 }
 def ktor_version = '1.1.3'
 def logback_version = '1.2.3'
@@ -50,6 +59,12 @@ kotlin {
         jsMain {
             dependencies {
                 implementation kotlin('stdlib-js')
+                implementation 'org.jetbrains:kotlin-react:16.9.0-pre.83-kotlin-1.3.50'
+                implementation 'org.jetbrains:kotlin-react-dom:16.9.0-pre.83-kotlin-1.3.50'
+                implementation "org.jetbrains.kotlinx:kotlinx-html-js:0.6.11"
+                implementation 'org.jetbrains:kotlin-css-js:1.0.0-pre.83-kotlin-1.3.50'
+                implementation 'org.jetbrains:kotlin-css:1.0.0-pre.83-kotlin-1.3.50'
+                implementation 'org.jetbrains:kotlin-styled:1.0.0-pre.83-kotlin-1.3.50'
             }
         }
         jsTest {
@@ -65,9 +80,13 @@ jvmJar {
     from(new File(jsBrowserWebpack.entry.name, jsBrowserWebpack.outputPath))
 }
 
-task run(type: JavaExec, dependsOn: [jvmJar]) {
-    group = "application"
-    main = "sample.SampleJvmKt"
-    classpath(configurations.jvmRuntimeClasspath, jvmJar)
-    args = []
+kotlinFrontend {
+    npm {
+        dependency "react"
+        dependency "react-dom"
+    }
+    webpackBundle {
+        bundleName = 'sample'
+        contentPath = file('src/jsMain/resources')
+    }
 }

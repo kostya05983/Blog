@@ -1,0 +1,30 @@
+{
+  "name": "confexplorer",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@jetbrains/kotlin-css": "^1.0.0-pre.82",
+    "@jetbrains/kotlin-css-js": "^1.0.0-pre.82",
+    "@jetbrains/kotlin-styled": "^1.0.0-pre.82",
+    "core-js": "^2.6.9",
+    "inline-style-prefixer": "^5.1.0",
+    "kotlinx-coroutines-core": "^1.3.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-modal": "^3.10.1",
+    "react-player": "^1.12.0",
+    "react-share": "^3.0.1",
+    "styled-components": "4"
+  },
+  "devDependencies": {
+    "react-scripts-kotlin": "3.0.4"
+  },
+  "scripts": {
+    "start": "react-scripts-kotlin start",
+    "build": "react-scripts-kotlin build",
+    "eject": "react-scripts-kotlin eject",
+    "gen-idea-libs": "react-scripts-kotlin gen-idea-libs",
+    "get-types": "react-scripts-kotlin get-types --dest=src/types",
+    "postinstall": "npm run gen-idea-libs"
+  }
+}

@@ -1,4 +1,4 @@
-package sample
+package ru.jetspirit
 
 import kotlin.test.Test
 import kotlin.test.assertTrue

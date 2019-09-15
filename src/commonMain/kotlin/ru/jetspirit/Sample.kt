@@ -1,4 +1,4 @@
-package sample
+package ru.jetspirit
 
 expect class Sample() {
     fun checkMe(): Int
