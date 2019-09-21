@@ -86,7 +86,7 @@ kotlinFrontend {
         dependency "react-dom"
     }
     webpackBundle {
-        bundleName = 'sample'
+        bundleName = 'Blog'
         contentPath = file('src/jsMain/resources')
     }
 }
