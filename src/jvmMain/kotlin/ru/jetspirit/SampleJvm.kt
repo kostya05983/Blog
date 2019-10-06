@@ -9,13 +9,6 @@ import io.ktor.server.netty.*
 import kotlinx.html.*
 import java.io.*
 
-actual class Sample {
-    actual fun checkMe() = 42
-}
-
-actual object Platform {
-    actual val name: String = "JVM"
-}
 
 fun main() {
     embeddedServer(Netty, port = 8080, host = "127.0.0.1") {
@@ -26,7 +19,6 @@ fun main() {
                         title("Hello from Ktor!")
                     }
                     body {
-                        +"${hello()} from Ktor. Check me value: ${Sample().checkMe()}"
                         div {
                             id = "js-response"
                             +"Loading..."
