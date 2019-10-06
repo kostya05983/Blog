@@ -30,7 +30,7 @@
     "gen-idea-libs": "react-scripts-kotlin gen-idea-libs",
     "get-types": "react-scripts-kotlin get-types --dest=src/types",
     "postinstall": "npm run gen-idea-libs",
-    "predeploy": "./gradlew build",
-    "deploy": "gh-pages -d build"
+    "predeploy": "./gradlew build && cp ./build/bundle/Blog.bundle.js ./publish/ && cp ./src/jsMain/resources/index.html ./publish/",
+    "deploy": "gh-pages -d publish"
   }
 }
