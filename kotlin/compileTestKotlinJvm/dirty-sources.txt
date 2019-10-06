@@ -1,1 +1,0 @@
-/home/kostya05983/Projects/Blog/src/jvmTest/kotlin/ru/jetspirit/SampleTestsJVM.kt
