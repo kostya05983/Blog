@@ -9,3 +9,6 @@ script: npm run deploy
 
 services:
   - docker
+notifications:
+  email:
+    on_success: "never"
