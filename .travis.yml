@@ -1,0 +1,11 @@
+language: java
+install: true
+
+jdk:
+  - openjdk11
+before_install:
+  - nvm install 6.4.1
+script: npm run deploy
+
+services:
+  - docker
