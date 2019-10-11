@@ -9,7 +9,7 @@ import styled.styledTextArea
 class MainPage : RComponent<RProps, RState>() {
     override fun RBuilder.render() {
         styledTextArea {
-            +"Bla bla bla blab aad;'lksf;'ld"
+            +"? new test? testing"
         }
     }
 }
