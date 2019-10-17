@@ -5,3 +5,7 @@
  сериализатор?
  Это и остветит данная статья. Язык программирования был выбран kotlin 1.3.50.
  
+Результаты
+Benchmark                               Mode  Cnt  Score    Error  Units
+SerializationDefault.serialize          avgt   25  0.009 ±  0.001   s/op
+SerializationWithCustomBench.serialize  avgt   25  0.008 ±  0.001   s/op

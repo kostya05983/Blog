@@ -7,8 +7,8 @@ import org.openjdk.jmh.annotations.*
 @Warmup(iterations = 2)
 @Measurement(iterations = 5, batchSize = 10)
 @State(value = Scope.Benchmark)
-open class SerializationWithCustomBench {
-    private lateinit var test: List<ClassWithBigDataCustom>
+open class SerializationDefault {
+    private lateinit var test: List<ClassWithBigData>
 
     @Setup
     fun setup() {
@@ -21,11 +21,11 @@ open class SerializationWithCustomBench {
         mapper.writeValueAsString(test)
     }
 
-    private fun generateData(): List<ClassWithBigDataCustom> {
-        val list = mutableListOf<ClassWithBigDataCustom>()
+    private fun generateData(): List<ClassWithBigData> {
+        val list = mutableListOf<ClassWithBigData>()
         repeat(1000) {
             list.add(
-                ClassWithBigDataCustom(
+                ClassWithBigData(
                     "test", "test", 20, "Test", "test",
                     listOf(
                         OneMoreClass("test1", "test2"),
@@ -40,4 +40,3 @@ open class SerializationWithCustomBench {
         return list
     }
 }
-
