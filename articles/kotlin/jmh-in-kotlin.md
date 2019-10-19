@@ -33,5 +33,13 @@ id "me.champeau.gradle.jmh" version "0.4.8"
 ```
 Ссылка на github https://github.com/melix/jmh-gradle-plugin
 
-#### Пример теста
+#### Пример простого бенчмарка
+
+
+#### Как разделить данные между процессами
+
+#### FAQ
+
+//Проблемы с очисткой кода
+./gradlew --no-daemon clean jmh
 

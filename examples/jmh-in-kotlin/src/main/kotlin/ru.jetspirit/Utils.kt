@@ -13,4 +13,9 @@ object Utils {
     fun emptyList(): List<String> {
         return emptyList()
     }
+
+    fun test(data: TestData): Int {
+        return data.paramA + data.paramB
+    }
+
 }
