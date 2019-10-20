@@ -1,13 +1,14 @@
 ### Микробенчмаркинг с jmh in Kotlin
 
 Захотелось осветить тему для коллег с микробенчмаркингом в kotlin.
-И сделать небольшой обзор для быстрого старта на русском.
-Статья освящает моменты с быстрым запуском и дает небольшой FAQ по известным проблемам.
+И сделать небольшой обзор для старта на русском.
+Статья освящает моменты с запуском и дает небольшой FAQ по известным проблемам.
 
 Jmh - Java Microbenchmark Harness, библиотека для тестирования производительности вашего java кода.
 
 Перед тем, как запустить jmh ваша программа должна быть скомпилена в байт код,
-но благо для всего этого уже есть плагин. Также будьте готовы к тому, что бенчмаркинг дело не быстрое.
+но благо для всего этого уже есть плагин. Также будьте готовы к тому, что бенчмаркинг дело не быстрое, в среднем 
+прогон примеров занял 11 минут 53 секунды на i5 7 поколения.
 
 #### Подключение 
 
@@ -29,10 +30,6 @@ dependencies {
     jmh 'org.openjdk.jmh:jmh-generator-annprocess:1.20'
 }
 ```
-В секции с плагинами подключаем: 
-```
-id "me.champeau.gradle.jmh" version "0.4.8"
-```
 [Ссылка на плагин github](https://github.com/melix/jmh-gradle-plugin) 
 
 #### Утилитный класс над которым будет производиться бенчмаркинг
@@ -49,7 +46,7 @@ object Utils {
 }
 ```
 
-#### Пример простого бенчмарка
+#### Пример бенчмарка
 Немного об используемых аннотациях:
 
 [@BenchmarkMode](https://github.com/openjdk/jmh/blob/master/jmh-core/src/main/java/org/openjdk/jmh/annotations/Benchmark.java) - этой аннотацией вы указываете, что и как вы хотите замерить.
@@ -67,13 +64,13 @@ object Utils {
 [@Measurement](https://github.com/openjdk/jmh/blob/master/jmh-core/src/main/java/org/openjdk/jmh/annotations/Measurement.java) - здесь вы указываете параметры для замера, параметры соврешенно такие же как и в @WarmUp,
 batchSize - количество вызовов вашего бенчсмарк метода.
 
-Самый простой бенч на jmh будет выглядить следующим образом:
+В итоге бенч на jmh будет выглядить следующим образом:
 ```kotlin
 import org.openjdk.jmh.annotations.*
 
-@BenchmarkMode(Mode.AverageTime)
+@BenchmarkMode(Mode.SampleTime)
 @Warmup(iterations = 2)
-@Measurement(iterations = 5, batchSize = 10)
+@Measurement(iterations = 5, batchSize = 5)
 open class SumBenchmark {
 
     @Benchmark
@@ -101,11 +98,11 @@ State может быть следующим:
 ```kotlin
 import org.openjdk.jmh.annotations.*
 
-@BenchmarkMode(Mode.AverageTime)
+@BenchmarkMode(Mode.SampleTime)
 @Warmup(iterations = 2)
-@Measurement(iterations = 5, batchSize = 10)
+@Measurement(iterations = 5, batchSize = 5)
 @State(value = Scope.Benchmark)
-class SumBenchmarkWithData {
+open class SumBenchmarkWithData {
     private lateinit var test: TestData
 
     @Setup
@@ -119,6 +116,14 @@ class SumBenchmarkWithData {
     }
 }
 ```
+
+#### Запускаем и получаем результаты
+
+Запуск производиться следующим образом:
+```shell script
+./gradlew jmh
+```
+
 
 #### FAQ
 Плагин для jmh испытывает проблемы с очисткой скомпиленного кода, решение есть следующее:
