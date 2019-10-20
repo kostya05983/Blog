@@ -124,6 +124,28 @@ open class SumBenchmarkWithData {
 ./gradlew jmh
 ```
 
+Результаты можно найти в build/reports/jmh/reports.txt
+```shell script
+Benchmark                               Mode      Cnt   Score    Error  Units
+SumBenchmark.sum                      sample  5855149  ≈ 10⁻⁷            s/op
+SumBenchmark.sum:sum·p0.00            sample           ≈ 10⁻⁸            s/op
+SumBenchmark.sum:sum·p0.50            sample           ≈ 10⁻⁸            s/op
+SumBenchmark.sum:sum·p0.90            sample           ≈ 10⁻⁷            s/op
+SumBenchmark.sum:sum·p0.95            sample           ≈ 10⁻⁷            s/op
+SumBenchmark.sum:sum·p0.99            sample           ≈ 10⁻⁷            s/op
+SumBenchmark.sum:sum·p0.999           sample           ≈ 10⁻⁷            s/op
+SumBenchmark.sum:sum·p0.9999          sample           ≈ 10⁻⁵            s/op
+SumBenchmark.sum:sum·p1.00            sample            0.001            s/op
+SumBenchmarkWithData.sum              sample  9676370  ≈ 10⁻⁷            s/op
+SumBenchmarkWithData.sum:sum·p0.00    sample           ≈ 10⁻⁸            s/op
+SumBenchmarkWithData.sum:sum·p0.50    sample           ≈ 10⁻⁸            s/op
+SumBenchmarkWithData.sum:sum·p0.90    sample           ≈ 10⁻⁷            s/op
+SumBenchmarkWithData.sum:sum·p0.95    sample           ≈ 10⁻⁷            s/op
+SumBenchmarkWithData.sum:sum·p0.99    sample           ≈ 10⁻⁷            s/op
+SumBenchmarkWithData.sum:sum·p0.999   sample           ≈ 10⁻⁷            s/op
+SumBenchmarkWithData.sum:sum·p0.9999  sample           ≈ 10⁻⁵            s/op
+SumBenchmarkWithData.sum:sum·p1.00    sample            0.002            s/op
+```
 
 #### FAQ
 Плагин для jmh испытывает проблемы с очисткой скомпиленного кода, решение есть следующее:
