@@ -16,6 +16,6 @@ class SumBenchmarkWithData {
 
     @Benchmark
     fun sum() {
-        Utils.test(test)
+        Utils.sumParams(test)
     }
 }
