@@ -72,7 +72,7 @@ class ValidObjectIdGenerator : ValidationParamResolver {
 ```
 
 #### Мой тип содержит конструктор с некоторой валидацией
-Библиотеке можно указать использовать конструктор для конкретного типа:
+Библиотеке можно указать использовать конструктор для конкретного типа
 ```kotlin
 class ObjectIdConstructor : ValidationConstructor<ObjectId> {
     override fun call(): ObjectId {
