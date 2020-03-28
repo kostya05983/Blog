@@ -1,4 +1,4 @@
-### Compound и Partial Индексы в spring-data-mongodb
+### Compound и Partial индексы в spring-data-mongodb
 
 #### Используемый стек:
 * spring-boot 2.2.4.RELEASE
