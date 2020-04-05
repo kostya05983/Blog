@@ -1,5 +1,8 @@
 language: java
 
+install:
+  - npm install
+
 jdk:
   - openjdk11
 node_js:
