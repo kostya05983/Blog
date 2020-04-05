@@ -7,7 +7,9 @@ jdk:
   - openjdk11
 node_js:
   - '8'
-script: CI=false npm run deploy
+script:
+  - CI=false
+  - CI=false npm run deploy
 
 services:
   - docker
