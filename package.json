@@ -2,6 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://kostya05983.github.io/Blog/",
   "dependencies": {
     "@jetbrains/kotlin-css": "^1.0.0-pre.91",
     "@jetbrains/kotlin-css-js": "^1.0.0-pre.91",
