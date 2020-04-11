@@ -1,4 +1,4 @@
-package ru.jetspirit.components
+package ru.jetspirit.components.header
 
 import kotlinx.css.Display
 import kotlinx.css.JustifyContent
@@ -8,6 +8,7 @@ import react.RBuilder
 import react.RComponent
 import react.RProps
 import react.RState
+import ru.jetspirit.components.headerpart.HeaderPart
 import styled.css
 import styled.styledDiv
 

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Blog-jvm">
+    <output-path>C:\Users\kosty\Projects\Blog\build\libs</output-path>
+    <root id="archive" name="Blog-jvm.jar">
+      <element id="module-output" name="Blog.jvmMain" />
+    </root>
+  </artifact>
+</component>

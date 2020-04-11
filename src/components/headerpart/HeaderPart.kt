@@ -1,4 +1,4 @@
-package ru.jetspirit.components
+package ru.jetspirit.components.headerpart
 
 import react.RBuilder
 import react.RComponent
