@@ -1,17 +1,17 @@
-package ru.jetspirit.components.headerpart
+package components.headerpart
 
 import react.RBuilder
 import react.RComponent
 import react.RProps
 import react.RState
-import styled.styledDiv
+import react.dom.div
 
 /**
  * @author Konstantin Volivach
  */
 class HeaderPart : RComponent<HeaderPartProps, RState>() {
     override fun RBuilder.render() {
-        styledDiv {
+        div("header_part") {
             +props.text
         }
     }

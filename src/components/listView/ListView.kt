@@ -1,17 +1,17 @@
-package ru.jetspirit.components
+package components.listView
 
 import react.RBuilder
 import react.RComponent
 import react.RProps
 import react.RState
-import styled.styledDiv
+import react.dom.div
 
 /**
  * @author Konstantin Volivach
  */
 class ListView : RComponent<ListViewProps, RState>() {
     override fun RBuilder.render() {
-        styledDiv {
+        div {
             props.items.map { it.render() }
         }
     }

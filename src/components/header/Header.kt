@@ -1,32 +1,26 @@
 package ru.jetspirit.components.header
 
-import kotlinx.css.Display
-import kotlinx.css.JustifyContent
-import kotlinx.css.display
-import kotlinx.css.justifyContent
 import react.RBuilder
 import react.RComponent
 import react.RProps
 import react.RState
-import ru.jetspirit.components.headerpart.HeaderPart
-import styled.css
-import styled.styledDiv
+import react.dom.div
+import components.headerpart.HeaderPart
 
 /**
  * @author Konstantin Volivach
  */
 class Header : RComponent<RProps, RState>() {
     override fun RBuilder.render() {
-        styledDiv {
-            css {
-                display = Display.flex
-                justifyContent = JustifyContent.spaceBetween
+        div("header") {
+            child(HeaderPart::class) {
+                attrs.text = "About me"
             }
             child(HeaderPart::class) {
-                attrs.text = "Статьи"
+                attrs.text = "Articles"
             }
             child(HeaderPart::class) {
-                attrs.text = "О себе"
+                attrs.text = "Contacts"
             }
         }
     }

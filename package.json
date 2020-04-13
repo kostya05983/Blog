@@ -4,13 +4,8 @@
   "private": true,
   "homepage": "https://kostya05983.github.io/Blog/",
   "dependencies": {
-    "@jetbrains/kotlin-css": "^1.0.0-pre.91",
-    "@jetbrains/kotlin-css-js": "^1.0.0-pre.91",
-    "@jetbrains/kotlin-styled": "^1.0.0-pre.91",
-    "inline-style-prefixer": "^6.0.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "styled-components": "^5.0.1"
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
     "gh-pages": "^2.2.0",
