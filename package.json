@@ -5,7 +5,8 @@
   "homepage": "https://kostya05983.github.io/Blog/",
   "dependencies": {
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-markdown": "^4.3.1"
   },
   "devDependencies": {
     "gh-pages": "^2.2.0",
