@@ -1,0 +1,28 @@
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    background: #24292E;
+    color: white;
+
+    height: 50px;
+
+    border-color: #707070;
+    border-bottom: 1px;
+}
+.header_part {
+    font-family: "Segoe UI Semibold", sans-serif;
+    font-size: 1.8em;
+}
+
+@font-face {
+    font-family: "Segoe UI Semibold";
+    src: local("Segoe UI Semibold"),
+    url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.woff2) format("woff2"),
+    url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.woff) format("woff"),
+    url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.ttf) format("truetype");
+}
+
+/*# sourceMappingURL=main.5506abb9.css.map*/
