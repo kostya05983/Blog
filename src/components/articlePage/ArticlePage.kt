@@ -8,7 +8,8 @@ import kotlin.browser.window
 
 class ArticlePage : RComponent<ArticlePageProps, ArticlePageState>() {
     override fun componentDidMount() {
-        window.fetch(props.url).then {
+        val url = "https://raw.githubusercontent.com/kostya05983/Blog/master/articles${props.id}"
+        window.fetch(url).then {
             it.text()
         }.then {
             setState {
@@ -29,15 +30,15 @@ class ArticlePage : RComponent<ArticlePageProps, ArticlePageState>() {
 }
 
 interface ArticlePageProps : RProps {
-    var url: String
+    var id: String
 }
 
 interface ArticlePageState : RState {
     var text: String?
 }
 
-fun RBuilder.articlePage(url: String) = child(MainPage::class, props = object : ArticlePageProps {
-    override var url: String
-        get() = url
+fun RBuilder.articlePage(id: String) = child(ArticlePage::class, props = object : ArticlePageProps {
+    override var id: String
+        get() = id
         set(value) {}
 }) {}

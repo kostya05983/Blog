@@ -20,3 +20,9 @@ class ListView : RComponent<ListViewProps, RState>() {
 interface ListViewProps : RProps {
     var items: List<RComponent<*, *>>
 }
+
+fun RBuilder.listView(items: List<RComponent<*, *>>) = child(ListView::class, props = object : ListViewProps {
+    override var items: List<RComponent<*, *>>
+        get() = items
+        set(value) {}
+}) {}
