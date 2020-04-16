@@ -9,7 +9,7 @@ import kotlin.browser.window
 class ArticleBlock : RComponent<ArticleBlockProps, ArticleBlockState>() {
     override fun componentDidMount() {
         println("id of block ${props.id}")
-        val url = "https://raw.githubusercontent.com/kostya05983/Blog/master/articles${props.id}"
+        val url = "https://raw.githubusercontent.com/kostya05983/Blog/master/articles/${props.id}"
         window.fetch(url).then {
             it.text()
         }.then {
@@ -32,7 +32,7 @@ class ArticleBlock : RComponent<ArticleBlockProps, ArticleBlockState>() {
     }
 
     override fun RBuilder.render() {
-        routeLink("/articles/${props.id}", className = "article_link") {
+        routeLink("/articles/${props.id.replace("/", "\\")}", className = "article_link") {
             div("article_block") {
                 state.headText?.let {
                     div("article_block_text") {

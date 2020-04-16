@@ -9,11 +9,11 @@ class ArticleListPage : RComponent<RProps, RState>() {
         div {
             listView(
                 items = arrayOf(
-                    "/kotlin/2019/jackson-serialization.md",
-                    "/kotlin/2019/jmh-in-kotlin.md",
-                    "/kotlin/2019/spring-test-data-generator.md",
-                    "/kotlin/2020/spring-data-indexes.28.03.2020.md",
-                    "/kotlin/2020/usefulness_of_deprecated.05.04.2020.md"
+                    "kotlin/2019/jackson-serialization.md",
+                    "kotlin/2019/jmh-in-kotlin.md",
+                    "kotlin/2019/spring-test-data-generator.md",
+                    "kotlin/2020/spring-data-indexes.28.03.2020.md",
+                    "kotlin/2020/usefulness_of_deprecated.05.04.2020.md"
                 )
             )
         }

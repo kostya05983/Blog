@@ -8,7 +8,7 @@ import kotlin.browser.window
 
 class ArticlePage : RComponent<ArticlePageProps, ArticlePageState>() {
     override fun componentDidMount() {
-        val url = "https://raw.githubusercontent.com/kostya05983/Blog/master/articles${props.id}"
+        val url = "https://raw.githubusercontent.com/kostya05983/Blog/master/articles/${props.id}"
         window.fetch(url).then {
             it.text()
         }.then {
@@ -19,7 +19,7 @@ class ArticlePage : RComponent<ArticlePageProps, ArticlePageState>() {
     }
 
     override fun RBuilder.render() {
-        div {
+        div("article_page") {
             state.text?.let {
                 MDReactComponent {
                     attrs.text = it
@@ -37,8 +37,6 @@ interface ArticlePageState : RState {
     var text: String?
 }
 
-fun RBuilder.articlePage(id: String) = child(ArticlePage::class, props = object : ArticlePageProps {
-    override var id: String
-        get() = id
-        set(value) {}
-}) {}
+fun RBuilder.articlePage(id: String) = child(ArticlePage::class) {
+    attrs.id = id
+}

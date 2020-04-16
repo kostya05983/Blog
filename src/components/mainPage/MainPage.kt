@@ -7,6 +7,7 @@ import react.dom.div
 import react.router.dom.browserRouter
 import components.header.Header
 import react.router.dom.route
+import react.router.dom.switch
 
 class MainPage : RComponent<RProps, MainPageState>() {
     override fun RBuilder.render() {
@@ -14,14 +15,23 @@ class MainPage : RComponent<RProps, MainPageState>() {
             div {
                 child(Header::class) {
                 }
-                route("/") {
-                    articleListPage()
-                }
-                route("/articles") {
-                    articleListPage()
-                }
-                route<ArticleIdProps>("/articles/:id") { props ->
-                    articlePage(props.match.params.id)
+                switch {
+                    route("/", exact = true) {
+                        articleListPage()
+                    }
+                    route("/contacts", exact = true) {
+                        div {
+
+                        }
+                    }
+                    route("/articles", exact = true) {
+                        articleListPage()
+                    }
+                    route<ArticleIdProps>("/articles/:id", exact = true) { props ->
+                        println("Matched ${props.match.params.id}")
+                        props.match.params.id.replace("\\", "/")
+                        articlePage(props.match.params.id)
+                    }
                 }
             }
         }
