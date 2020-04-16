@@ -1,9 +1,7 @@
 package components.listView
 
-import react.RBuilder
-import react.RComponent
-import react.RProps
-import react.RState
+import components.articleBlock.articleBlock
+import react.*
 import react.dom.div
 
 /**
@@ -11,18 +9,18 @@ import react.dom.div
  */
 class ListView : RComponent<ListViewProps, RState>() {
     override fun RBuilder.render() {
-        div {
-            props.items.map { it.render() }
+        div("list_view") {
+            props.items.map {
+                articleBlock(it)
+            }
         }
     }
 }
 
 interface ListViewProps : RProps {
-    var items: List<RComponent<*, *>>
+    var items: Array<String>
 }
 
-fun RBuilder.listView(items: List<RComponent<*, *>>) = child(ListView::class, props = object : ListViewProps {
-    override var items: List<RComponent<*, *>>
-        get() = items
-        set(value) {}
-}) {}
+fun RBuilder.listView(items: Array<String>) = child(ListView::class) {
+    attrs.items = items
+}

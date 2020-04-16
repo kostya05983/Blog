@@ -1,0 +1,9 @@
+.list_view {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    justify-content: stretch;
+
+    align-content: space-around;
+}
