@@ -16,18 +16,18 @@ class Header : RComponent<RProps, RState>() {
         div("header") {
             routeLink("/Blog/about", className = "header") {
                 child(HeaderPart::class) {
-                    attrs.text = "About me"
+                    attrs.text = "Обо мне"
                 }
             }
             routeLink("/Blog/articles", className = "header") {
                 child(HeaderPart::class) {
-                    attrs.text = "Articles"
+                    attrs.text = "Статьи"
 
                 }
             }
             routeLink("/Blog/contacts", className = "header") {
                 child(HeaderPart::class) {
-                    attrs.text = "Contacts"
+                    attrs.text = "Контакты"
                 }
             }
         }
