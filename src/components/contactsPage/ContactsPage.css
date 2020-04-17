@@ -1,0 +1,13 @@
+.contacts_page {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+}
+
+.contacts_text {
+    display: flex;
+    font-size: 1.5em;
+    font-family: sans-serif;
+}

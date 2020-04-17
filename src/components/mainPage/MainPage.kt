@@ -2,6 +2,7 @@ package components.mainPage
 
 import components.articleListPage.articleListPage
 import components.articlePage.articlePage
+import components.contactsPage.contactsPage
 import react.*
 import react.dom.div
 import react.router.dom.browserRouter
@@ -20,9 +21,7 @@ class MainPage : RComponent<RProps, MainPageState>() {
                         articleListPage()
                     }
                     route("/Blog/contacts", exact = true) {
-                        div {
-
-                        }
+                        contactsPage()
                     }
                     route("/Blog/articles", exact = true) {
                         articleListPage()
