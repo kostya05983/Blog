@@ -1,5 +1,6 @@
 package components.mainPage
 
+import components.aboutMePage.aboutMePage
 import components.articleListPage.articleListPage
 import components.articlePage.articlePage
 import components.contactsPage.contactsPage
@@ -19,6 +20,9 @@ class MainPage : RComponent<RProps, MainPageState>() {
                 switch {
                     route("/Blog/", exact = true) {
                         articleListPage()
+                    }
+                    route("/Blog/about", exact = true) {
+                        aboutMePage()
                     }
                     route("/Blog/contacts", exact = true) {
                         contactsPage()

@@ -1,0 +1,10 @@
+.about_me_page {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.about_me_text_block {
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+}
