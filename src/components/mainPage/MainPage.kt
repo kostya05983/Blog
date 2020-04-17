@@ -16,18 +16,18 @@ class MainPage : RComponent<RProps, MainPageState>() {
                 child(Header::class) {
                 }
                 switch {
-                    route("/", exact = true) {
+                    route("/Blog/", exact = true) {
                         articleListPage()
                     }
-                    route("/contacts", exact = true) {
+                    route("/Blog/contacts", exact = true) {
                         div {
 
                         }
                     }
-                    route("/articles", exact = true) {
+                    route("/Blog/articles", exact = true) {
                         articleListPage()
                     }
-                    route<ArticleIdProps>("/articles/:id", exact = true) { props ->
+                    route<ArticleIdProps>("/Blog/articles/:id", exact = true) { props ->
                         println("Matched ${props.match.params.id}")
                         props.match.params.id.replace("\\", "/")
                         articlePage(props.match.params.id)

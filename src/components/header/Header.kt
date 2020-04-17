@@ -14,18 +14,18 @@ import react.router.dom.routeLink
 class Header : RComponent<RProps, RState>() {
     override fun RBuilder.render() {
         div("header") {
-            routeLink("/about", className = "header") {
+            routeLink("/Blog/about", className = "header") {
                 child(HeaderPart::class) {
                     attrs.text = "About me"
                 }
             }
-            routeLink("/articles", className = "header") {
+            routeLink("/Blog/articles", className = "header") {
                 child(HeaderPart::class) {
                     attrs.text = "Articles"
 
                 }
             }
-            routeLink("/contacts", className = "header") {
+            routeLink("/Blog/contacts", className = "header") {
                 child(HeaderPart::class) {
                     attrs.text = "Contacts"
                 }

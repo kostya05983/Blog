@@ -9,7 +9,6 @@ class ArticleListPage : RComponent<RProps, RState>() {
         div {
             listView(
                 items = arrayOf(
-                    "kotlin/2019/jackson-serialization.md",
                     "kotlin/2019/jmh-in-kotlin.md",
                     "kotlin/2019/spring-test-data-generator.md",
                     "kotlin/2020/spring-data-indexes.28.03.2020.md",

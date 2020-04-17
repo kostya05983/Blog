@@ -32,7 +32,7 @@ class ArticleBlock : RComponent<ArticleBlockProps, ArticleBlockState>() {
     }
 
     override fun RBuilder.render() {
-        routeLink("/articles/${props.id.replace("/", "\\")}", className = "article_link") {
+        routeLink("/Blog/articles/${props.id.replace("/", "\\")}", className = "article_link") {
             div("article_block") {
                 state.headText?.let {
                     div("article_block_text") {
