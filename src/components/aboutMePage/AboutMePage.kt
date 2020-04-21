@@ -1,37 +1,45 @@
 package components.aboutMePage
 
 import MDReactComponent
-import react.RBuilder
-import react.RComponent
-import react.RProps
-import react.RState
+import react.*
 import react.dom.div
+import kotlin.browser.window
 
-class AboutMePage : RComponent<RProps, RState>() {
+class AboutMePage : RComponent<RProps, AboutMeState>() {
+    private val languagesMap = mapOf(
+        "ru-RU" to "ru",
+        "ru" to "ru",
+        "en-US" to "en",
+        "en" to "en"
+    )
+
+    override fun componentDidMount() {
+        val url =
+            "https://raw.githubusercontent.com/kostya05983/Blog/master/articles/${languagesMap[window.navigator.language] ?: "en"}/AboutMe.md"
+        window.fetch(url).then {
+            it.text()
+        }.then {
+            setState {
+
+            }
+        }
+    }
+
     override fun RBuilder.render() {
         div("about_me_page") {
-            div("about_me_text_block") {
-                MDReactComponent {
-                    attrs.text = """
-                        ## Привет
-                        Меня зовут Константин Воливач и вы на моем блоге, он представляет собой не вверх дизайнерского искусства,
-                        но я на нем буду писать статьи о spring, kotlin и платформе jvm в целом, посмотрим куда меня занесет.
-                        
-                        ## Немного фактов обо мне:
-                        * Разрабатываю 2 год на jvm
-                        
-                        * Большинство этого опыта это kotlin опыт
-                        
-                        * Делаю тестовые для стажеров
-                        
-                        * Коммичу в spring иногда и стараюсь развивать opensource, все это вы можете увидеть на моем [github](https://github.com/kostya05983)
-                    """.trimIndent()
+            state.article?.let {
+                div("about_me_text_block") {
+                    MDReactComponent {
+                        attrs.text = it.trimIndent()
+                    }
                 }
             }
         }
     }
 }
 
-fun RBuilder.aboutMePage() = child(AboutMePage::class) {
+fun RBuilder.aboutMePage() = child(AboutMePage::class) {}
 
+interface AboutMeState : RState {
+    var article: String?
 }
