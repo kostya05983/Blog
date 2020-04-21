@@ -16,11 +16,12 @@ class AboutMePage : RComponent<RProps, AboutMeState>() {
     override fun componentDidMount() {
         val url =
             "https://raw.githubusercontent.com/kostya05983/Blog/master/articles/${languagesMap[window.navigator.language] ?: "en"}/AboutMe.md"
+        console.log("About me url $url")
         window.fetch(url).then {
             it.text()
         }.then {
             setState {
-
+                article = it
             }
         }
     }
